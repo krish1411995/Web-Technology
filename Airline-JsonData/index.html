@@ -1,0 +1,131 @@
+<html>
+<head>
+<style>
+table, td, th{
+  border: 1px solid black;
+}
+</style>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>
+  Homework 4
+</title>
+<script>
+function runthemain(){
+  var xmlhttp;
+  if (window.XMLHttpRequest) {
+// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest(); }
+else {
+// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); }
+  var filename = document.getElementById("inputtext").value;
+  if(filename=="")
+  {
+
+    return alert("enter file name");;
+  }
+      xmlhttp.open("GET", filename, false);
+      xmlhttp.onreadystatechange = function() {
+        console.log(this.readyState);
+        if(this.status==404 && this.readyState == 4) {
+          console.log("hello");
+          //alert("Enter the correct file name");
+          return alert("Enter the correct file name");
+        }
+        if (this.readyState == 4 && this.status == 200) {
+          try {
+            var myArr = JSON.parse(this.responseText);
+          } catch (e) {
+            return alert("wrong json file format");
+          }
+
+
+            console.log(myArr);
+            myFunction(myArr);
+        }
+
+      };
+    xmlhttp.send();
+    return false;
+}
+
+
+function myFunction(arr) {
+  if(arr.Mainline.Table.Row==undefined)
+  {
+    //alert("file is empty");
+    console.log("abc");
+    return alert("file is empty");
+  }
+  var z = arr.Mainline.Table.Header.Data.length;
+  console.log(z);
+    var out = "";
+    out += '<tr>';
+    for (var i = 0; i < z; i++) {
+      out +='<th>'+arr.Mainline.Table.Header.Data[i]+'</th>';
+    }
+    out += '</tr>';
+    z = arr.Mainline.Table.Row.length;
+    console.log(z);
+    for(var i = 0; i < z; i++){
+      out += '<tr>';
+      out += '<td>'+arr.Mainline.Table.Row[i].Airline+'</td>';
+      out += '<td>'+arr.Mainline.Table.Row[i].IATA+'</td>';
+      out += '<td><ul>';
+      for(var j =0;j<arr.Mainline.Table.Row[i].Hubs.Hub.length;j++)
+      {
+        if(j==0)
+        {
+          out +='<li><b>'+arr.Mainline.Table.Row[i].Hubs.Hub[j]+'</b>';
+        }
+        else {
+          out +='<li>'+arr.Mainline.Table.Row[i].Hubs.Hub[j];
+        }
+      }
+      out += '<ul></td>';
+      if(arr.Mainline.Table.Row[i].Notes!=null)
+      {
+          out += '<td><p>'+arr.Mainline.Table.Row[i].Notes+'</p></td>';
+      }
+      else {
+        out += '<td><p></p></td>';
+      }
+
+      out += '<td><a href="'+arr.Mainline.Table.Row[i].HomePage+'">'+ arr.Mainline.Table.Row[i].HomePage+'</a></td>';
+      out += '<td><img src="'+arr.Mainline.Table.Row[i].Plane+'" style="width:304px;height:228px;"></td>';
+      out += '</tr>';
+    }
+    Popup(out);
+    //document.getElementById("tabledata").innerHTML = out;
+}
+
+///////////////
+function Popup(out) {
+  var popup = window.open("", "", "width=940,height=680,resizeable,scrollbars");
+  //table = document.getElementById("tabledata");
+  var out1="";
+  out1+='<html><head></head><style>table, td, th{border: 1px solid black;}</style><body>';
+  out1+='<table>';
+  out1+=out+'</body></table>';
+  console.log(out1);
+  popup.document.write(out1);
+  popup.document.close();
+  if (window.focus)
+  popup.focus();
+}
+/////////
+
+</script>
+</head>
+<body>
+<div align="center">
+  <form onsubmit="return runthemain()">
+  <h2> Enter URL for Airlines List JSON File</h2>
+  <input type="text" placeholder="type the name of the file here" id="inputtext" width="800px" required></input><br><br>
+  <input type="button" value="Submit Query" id="button1" onclick="runthemain()">
+</form>
+</div>
+
+
+</body>
+</html>
