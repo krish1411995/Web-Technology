@@ -1,0 +1,208 @@
+a{
+  text-decoration: none;
+  color: inherit;
+}
+#firstdiv{
+    padding:0;
+    margin:0;
+    background-color: #004171
+}
+
+#seconddiv{
+    padding:2.5;
+    margin:0;
+    background-color: #004171
+}
+
+.thirddiv{
+  background-color: #FFFFFF
+}
+
+.forthdiv{
+  padding:0;
+  margin:0;
+  background-color: #004171
+}
+
+.sixdiv{
+  padding-top:20px;
+  padding-bottom:15px;
+  margin: 0;
+  background-color: #004171
+}
+
+#logoimage{
+  padding:10px;
+  padding-top: 12px;
+  padding-left: 70px;
+  width: 200px;
+  height: 65px;
+  position: relative;
+}
+#textdiv{
+  color:#0083dc;
+  font-weight: bold;
+  font-size: 18px;
+  float: right;
+  padding-left: 150px;
+  padding-top: 15px;
+  position: absolute;
+  right: 240px;
+  margin-right: 0;
+  font-family: sans-serif;
+}
+
+#buttonapply1{
+  background-color:#d70024;
+  color: #FFFFFF;
+  height: 45px;
+  width: 165px;
+  font-size: 20px;
+  float: right;
+  margin-right: 70px;
+  margin-top: 16px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  border: 1px solid #d70024;
+  box-shadow:0.5px 1px 1px 1px pink inset;
+}
+
+#forp{
+  margin-top: 0;
+  margin-right: 5px;
+  padding-top: 0;
+  line-height: 140%;
+}
+
+#forp2{
+  font-size: 60px;
+  color:#FFFFFF;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 38px;
+  margin-top: 75px;
+
+}
+
+#forp3{
+  font-size: 36px;
+  color:#FFFFFF;
+  font-family: sans-serif;
+  margin-top: 0;
+  padding-top: 0;
+
+}
+#buttonget{
+  background-color:#d70024;
+  color: #FFFFFF;
+  border-radius: 6px;
+  font-family: sans-serif;
+  height: 45px;
+  width: 145px;
+  margin-left: 45%;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  border: 1px solid #d70024;
+  font-size: 20px;
+  box-shadow:0.5px 0.5px 4px 1px pink inset;
+}
+
+input:hover{
+   background-color:#bf0303 !important;
+}
+
+#bbnlogo{
+  margin-top: 10px;
+  margin-right: 60px;
+  position: relative;
+  left: 220px;
+  top: 20px;
+}
+
+#forpwhite{
+  color:#0083dc;
+  font-weight: bold;
+  font-size: 47px;
+  font-family: sans-serif;
+  margin-top: 50px;
+  padding-top: 5px;
+}
+
+.fortabelcontent{
+  vertical-align: top;
+}
+
+.forupperwordtable{
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+.forlowerwordtable{
+  font-family: sans-serif;
+  font-weight: 100;
+  line-height: 150%;
+  font-size: 18px;
+}
+
+.forpaddingintable{
+  padding-left: 10px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+#fortable{
+  margin-left: 250px;
+}
+
+#fifthdiv{
+    padding:6px;
+    margin:0;
+    background-color: #006eb9
+}
+
+#forpfooter{
+  background: none;
+  margin:0;
+  padding:0;
+  border:none;
+  color: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  margin-left: 100px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+
+}
+
+#forpfooter1{
+  background: none;
+  margin:0;
+  padding:0;
+  border:none;
+  color: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+
+}
+
+#fordot{
+  font-weight: 1100;
+  color: #006eb9;
+  font-size: 20px;
+}
+
+
+
+#forplfooter{
+  color: #FFFFFF;
+  margin-top: 16px;
+  margin-left: 100px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 12px;
+}
