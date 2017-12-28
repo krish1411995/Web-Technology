@@ -6,8 +6,8 @@ JavaScript program will be embedded in an HTML file so that it can be
 executed within a browser.<br>
 
 • Your program should display a text box to enter the JSON file name
-as shown below on Figure 1. On clicking the “Submit Query” button,
-your program should display the table as shown below, Figure 2. If the
+as shown below. On clicking the “Submit Query” button,
+your program should display the table as shown below. If the
 text box is left empty and Submit Query is clicked, an appropriate
 error message must be shown.<br>
 Figure 1: Initial Page<br>
