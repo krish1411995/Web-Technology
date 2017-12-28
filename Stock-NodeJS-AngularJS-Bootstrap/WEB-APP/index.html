@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link href="http://ziscloud.github.io/angular-bootstrap-toggle/css/angular-bootstrap-toggle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="hw8.css">
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script src="https://connect.facebook.net/en_US/all.js"></script>
+  <script src="http://ziscloud.github.io/angular-bootstrap-toggle/js/angular-bootstrap-toggle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+</head>
+<body background="http://cs-server.usc.edu:45678/hw/hw8/images/background.png" ng-app="myApp" ng-init="load1(); disablerightbutton();" ng-controller="myCtrl" >
+
+<script src="stockangular.js"></script>
+<script>
+var abc=0;
+  $(document).ready(function(){
+    // $("#quotebutton").click(function(){
+    //     $("#frontdiv").hide();
+    // });
+    // $("#quotebutton").click(function(){
+    //     $("#backdiv").show();
+    // });
+    // $("#leftbutton").click(function(){
+    //     $("#backdiv").hide();
+    // });
+    // $("#leftbutton").click(function(){
+    //     $("#frontdiv").show();
+    // });
+    // $("#rightbutton").click(function(){
+    //     $("#frontdiv").hide();
+    // });
+    // $("#rightbutton").click(function(){
+    //     $("#backdiv").show();
+    // });
+
+  });
+  function showandhide()
+  {
+    //console.log('button 1 clicked');
+    $("#rightbutton").trigger("click");
+  };
+
+
+</script>
+<style>
+  #backdiv.back{
+ animation-name: slideInRight;
+  display: block;
+  }
+  #frontdiv.front{
+ animation-name: slideInLeft;
+  display: block;
+  }
+
+  #frontdiv, #backdiv{
+   opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  display: none;
+}
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+    opacity: 0;
+     display: block;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+   display: block;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+     opacity: 0;
+     display: block;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+     opacity: 1;
+     display: block;
+  }
+}
+
+
+/* .right-bt-adj{
+    margin: 51px 10px 0 0;
+    position: absolute;
+    right: 109px;
+    z-index: 9;
+}
+
+.left-bt-adj{
+    margin-left: 28px;
+    margin-top: 37px;
+}
+
+.refresh-bt-adj{
+    margin-right: 45px;
+} */
+</style>
+
+<div class="container">
+
+  <div class="container corner" style="background:white; margin-top: 10px;">
+
+  <h4 align="center">Stock Market Search</h4>
+  <form name="stockform">
+    <div class="form-group">
+      <label class="control-label col-sm-3">Enter Stock Ticker Symbol:*</label>
+      <div class="col-sm-6">
+      <input type="text" class="form-control" id="myInput" name="myInput" ng-model="myInput" ng-change="myInput = myInput.toUpperCase()" placeholder="e.g. AAPL" ng-class="{red: stockform.myInput.$touched && stockform.myInput.$invalid}" required/>
+      <span ng-show="stockform.myInput.$touched && stockform.myInput.$invalid">Please enter a stock ticker symbol.</span>
+    </div>
+    </div>
+    <div class="col-sm-3" style="padding-bottom: 15px;">
+      <button ng-click="showanim='back'; myFunc(); myFunc1(); myFunc2(); myFunc4(); enablerightbutton();" id="quotebutton" type="submit" class="btn btn-primary" ng-disabled="stockform.myInput.$invalid">
+      <span class="glyphicon glyphicon-search"></span> Get Quote</button>
+      <button ng-click="showanim='front'; disablerightbutton();" type="button" class="btn btn-default">
+      <span   class="glyphicon glyphicon-refresh"></span> Clear</button>
+      <!--<p>{{myWelcome}}</p>-->
+    </div>
+  </form>
+</div>
+<div class="container corner" style="background:white; margin-top: 10px; padding: 0.5px;">
+</div>
+    <div  ng-class="showanim"  class="container corner" id="frontdiv" style="background:white; margin-top: 10px; padding:20px;">
+
+  <div class="panel panel-default" style="margin-bottom: 0px;">
+    <div class="panel-heading">
+      <div class="row">
+      <div class="col-sm-4 col-xs-5">
+        <h4>Favorite List</h4>
+      </div>
+
+      <div class="col-sm-8 col-xs-7" style="float:right;">
+        <div class="checkbox">
+            <button  ng-show="showanim=='front'" ng-click="showanim='back'" type="button" class="btn btn-default right-bt-adj" id="rightbutton" ng-disabled="right_button" style="float:right;">
+          <span class="glyphicon glyphicon-chevron-right"></span></button>
+
+          <button  type="button" class="btn btn-default refresh-bt-adj" style="float:right;" ng-click="load1();">
+          <span class="glyphicon glyphicon-refresh"></span></button>
+
+
+          <label style="float:right;">
+            <span class="hidden-xs">Automatic Refresh &nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <toggle ng-model="checkboxModel"  id="toggle-event"  ng-change="toogleAuto(checkboxModel)"></toggle>
+          </label>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <label>Sort By &nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <select style="font-weight: 400; height: 32px;width: 252px; background: rgba(255, 255, 255, 0.3);" id="sel1" ng-model="sortbyitem" ng-init="sortbyitem='default'"  ng-change="selectedItemChanged();">
+            <option value="default">Default</option>
+            <option value="stockTicker" ng-selected="selected">Symbol</option>
+            <option value="lastPrice1">Price</option>
+            <option value="change">Change</option>
+            <option value="changePercentage">Change Percent</option>
+            <option value="volume">Volume</option>
+          </select>
+        </div>
+        <div class="col-sm-8">
+          <label> Order &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <select style="font-weight: 400; height: 32px;width: 252px;" id="sel2" ng-model="sortorder" ng-disabled="(sortbyitem=='default')" ng-init="sortorder='false'"  ng-change="selectedItemChanged1();">
+            <option value="false">Ascending</option>
+            <option value="true">Descending</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:10px; overflow:scroll">
+      <table class="table table-striped fronttable">
+        <tbody>
+          <th>Symbol</th>
+          <th>Stock Price</th>
+          <th>Change (Change Percent)</th>
+          <th>Volume</th>
+          <th></th>
+          <!--<a ng-click="showanim='back'">hello</a>-->
+        <tr ng-repeat="y in fronttabledata | orderBy:unit:unit1">
+          <td id="stocksymbol"><a ng-click="againtheanswer(y.stockTicker);" onclick="showandhide();">{{y.stockTicker}}</a></td>
+          <td>{{y.lastPrice1}}</td>
+          <td><font color="{{y.color}}">{{y.change}}({{y.changePercentage}}%)<img src="{{y.hyperlink}}" height="15" width="15"/></td>
+          <!--<font color="{{stockColor}}">{{changePercent1}}<img ng-src="{{stockImg}}" height="15" width="15"/></td>-->
+          <td>{{y.volume | number}}</td>
+          <td><button type="button" class="btn btn-default deletestock" ng-click="delete(y.stockTicker)" id="fronttrash" style="float: left">
+          <span class="glyphicon glyphicon-trash"></span></button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+</div>
+</div>
+<div   ng-class="showanim" class="container corner" id="backdiv" style="background:white; margin-top: 10px; padding:20px;">
+  <div class="panel panel-default" style="margin-bottom: 0px;">
+  <div class="panel-heading" style="text-align:center">
+    <button  ng-show="showanim=='back'"  ng-click="showanim='front'; load1();"  type="button" class="btn btn-default left-bt-adj" id="leftbutton" style="float: left">
+    <span class="glyphicon glyphicon-chevron-left"></span></button>
+
+  <label class="text-center">Stock Details<label>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#1a" data-toggle="tab"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;<span class="hidden-xs"> Current Stock</span><span class="show-xs hidden-sm hidden-md hidden-lg">Stock</span></a></li>
+      <li><a href="#2a" data-toggle="tab"><span class="glyphicon glyphicon-stats"></span>&nbsp;<span class="hidden-xs"> Historical Charts</span><span class="show-xs hidden-sm hidden-md hidden-lg">Charts</span></a></li>
+      <li><a href="#3a" data-toggle="tab"><span class="glyphicon glyphicon-link"></span>&nbsp;<span class="hidden-xs"> News Feeds</span><span class="show-xs hidden-sm hidden-md hidden-lg">News</span></a></li>
+    </ul>
+    <hr>
+    <div class="tab-content clearfix">
+			  <div class="tab-pane active row" id="1a">
+            <div class="col-sm-6">
+              <div>
+                <label>Stock Details</label>
+                <button type="button" class="btn btn-default" style="float:right; padding:5px" id="facebookforshare" onclick="facebookshare();" ng-disabled="facebook_button">
+                <img src="http://cs-server.usc.edu:45678/hw/hw8/images/facebook.png" width="22" /></button>
+                <button type="button" class="btn btn-default" style="float:right" ng-click="save1();" ng-disabled="star_button">
+                <span class="glyphicon glyphicon-star" id="forstar"></span></button>
+              </div>
+              <div style="margin-top: 20px;">
+                <div id="div5" style="margin-top: 150px; margin-bottom: 100px; display:block">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                    </div>
+                  </div>
+                </div>
+                <div id="div13" class="alert alert-danger" style="display:none">
+                  ERROR! Failed to get current stock data.
+                </div>
+                <div id="div4" style="display:none">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <td>Stock Ticker Symbol</td>
+                      <td>{{stockTicker}}</td>
+                    </tr>
+                    <tr>
+                      <td>Last Price</td>
+                      <td>{{lastPrice}}</td>
+                    </tr>
+                    <tr>
+                      <td>Change (Change Percent)</td>
+                      <td><font color="{{stockColor}}">{{changePercent1}}<img ng-src="{{stockImg}}" height="15" width="15"/></td>
+                    </tr>
+                    <tr>
+                      <td>Timestamp</td>
+                      <td>{{timestamp}}</td>
+                    </tr>
+                    <tr>
+                      <td>Open</td>
+                      <td>{{open}}</td>
+                    </tr>
+                    <tr>
+                      <td>Previous Close</td>
+                      <td>{{previousClose}}</td>
+                    </tr>
+                    <tr>
+                      <td>Day's Range</td>
+                      <td>{{daysRange}}</td>
+                    </tr>
+                    <tr>
+                      <td>Volume</td>
+                      <td>{{volume | number}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#1b" data-toggle="tab" onCLick="mypricevolumechart();">Price</a></li>
+                <li><a href="#2b" data-toggle="tab" onClick="mySMAchart();">SMA</a></li>
+                <li><a href="#3b" data-toggle="tab" onClick="myEMAchart();">EMA</a></li>
+                <li><a href="#4b" data-toggle="tab" onCLick="mySTOCHchart();">STOCH</a></li>
+                <li><a href="#5b" data-toggle="tab" onCLick="myRSIchart();">RSI</a></li>
+                <li><a href="#6b" data-toggle="tab" onCLick="myADXchart();">ADX</a></li>
+                <li><a href="#7b" data-toggle="tab" onCLick="myCCIchart();">CCI</a></li>
+                <li><a href="#8b" data-toggle="tab" onCLick="myBBANDSchart();">BBANDS</a></li>
+                <li><a href="#9b" data-toggle="tab" onCLick="myMACDchart();">MACD</a></li>
+              </ul>
+              <div id="div6" style="margin-top: 150px; margin-bottom: 100px; display:block">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                  </div>
+                </div>
+              </div>
+              <div id="div14" class="alert alert-danger" style="display:none">
+                ERROR! Failed to get current price data.
+              </div>
+              <div id="div7" class="tab-content clearfix" style="display:none">
+                <div class="tab-pane active" id="1b">
+                  <p>Hello1</p>
+                </div>
+                <div class="tab-pane" id="2b">
+                  <p>Hello2</p>
+                </div>
+                <div class="tab-pane" id="3b">
+                  <p>Hello3</p>
+                </div>
+                <div class="tab-pane" id="4b">
+                  <p>Hello4</p>
+                </div>
+                <div class="tab-pane" id="5b">
+                  <p>Hello5</p>
+                </div>
+                <div class="tab-pane" id="6b">
+                  <p>Hello6</p>
+                </div>
+                <div class="tab-pane" id="7b">
+                  <p>Hello7</p>
+                </div>
+                <div class="tab-pane" id="8b">
+                  <p>Hello8</p>
+                </div>
+                <div class="tab-pane" id="9b">
+                  <p>Hello9</p>
+                </div>
+              </div>
+            </div>
+				</div>
+				<div class="tab-pane" id="2a" >
+          <div id="div9" style="margin-top: 150px; margin-bottom: 100px; display:block">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+              </div>
+            </div>
+          </div>
+          <div id="div10" style="display:none">
+          </div>
+          <div id="div15" class="alert alert-danger" style="display:none">
+            ERROR! Failed to get Historical data.
+          </div>
+				</div>
+        <div class="tab-pane" id="3a">
+          <div id="div11" style="margin-top: 150px; margin-bottom: 100px; display:block">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+              </div>
+            </div>
+          </div>
+          <div id="div12" style="display:none">
+             <div class="well well-lg" ng-repeat="x in newsfeeddata1"><a href={{x.hyperlink}} target="_blank"><h4>{{x.newstitle}}</h4></a><br><br>Author:{{x.author}}<br><br>Date:{{x.publication}}</div>
+          </div>
+          <div id="div16" class="alert alert-danger" style="display:none">
+            ERROR! Failed to get current News feed data.
+          </div>
+				</div>
+			</div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!--angular.module('myApp', [])
+.controller('myCtrl', function($scope, $http) {
+    $scope.myFunc = function() {
+      console.log("hello");
+    $http.get("http://localhost:8000/stock/EMA/"+$scope.myInput).then(function(response) {
+        console.log(response.data);
+    });
+    };
+});-->
+</body>
+
+</html>

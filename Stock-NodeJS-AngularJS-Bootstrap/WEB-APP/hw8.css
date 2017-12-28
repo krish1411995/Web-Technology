@@ -1,0 +1,19 @@
+.corner {
+    border-radius: 10px;
+}
+
+.red {
+  border: solid 1px red;
+}
+#frontdiv{
+  left: 50%;
+}
+
+/*.glyphicon-star {
+   color: yellow;
+}
+*/
+#forstar {
+  color: white;
+  text-shadow:0 0 1px  black,0 0 1px  black,0 0 1px  black,0 0 1px  black ;
+}
