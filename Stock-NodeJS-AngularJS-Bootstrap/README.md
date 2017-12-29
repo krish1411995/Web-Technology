@@ -31,7 +31,7 @@ o The second section should be the Stock Details and charts.<br>
 
 
 
-# SreenShots
+# ScreenShots
 ![screen shot 2017-12-28 at 11 30 40 pm](https://user-images.githubusercontent.com/20076221/34431993-4954d822-ec28-11e7-8f63-07f6b8312f99.png)<br>
 ![screen shot 2017-12-28 at 11 31 20 pm](https://user-images.githubusercontent.com/20076221/34431998-514c3836-ec28-11e7-958f-6cc7bdd06dc8.png)<br>
 ![screen shot 2017-12-28 at 11 31 48 pm](https://user-images.githubusercontent.com/20076221/34432002-5ce4273a-ec28-11e7-8775-543eb7e3bf2c.png)<br>
