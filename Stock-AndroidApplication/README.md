@@ -27,7 +27,7 @@ The user can enter the stock name or symbol in the text view to get the stock in
 To get the data used for auto-complete suggestions, you need to make http requests to your Node.js script which is in AWS.<br>
 If the user selects one of the results from the auto-complete dropdown, the content of the result (symbol with the company name) should be copied to the input field and the autocomplete dropdown then disappears.<br>
 If the user taps on an area other than the auto-complete form, the dropdown should be hidden.<br>
-![screen shot 2017-12-29 at 12 34 23 am](https://user-images.githubusercontent.com/20076221/34432867-14748d98-ec30-11e7-981a-d2437c266122.png)<br>
+![screen shot 2017-12-29 at 12 34 23 am](https://user-images.githubusercontent.com/20076221/34432867-14748d98-ec30-11e7-981a-d2437c266122.png)
 ![screen shot 2017-12-29 at 12 34 10 am](https://user-images.githubusercontent.com/20076221/34432871-18ac37f8-ec30-11e7-9bd5-46179838d8b1.png)<br>
 5.1.2 Validations<br>
 The validation for empty symbol entry needs to be implemented. If the user does not enter anything in the ‘UITextField’ or just enters some empty spaces, when he presses the Get Quote button an appropriate message to indicate the error should be displayed.<br>
