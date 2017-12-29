@@ -50,5 +50,6 @@ Here are some important points about this feature:<br>
 • Display a proper error message if failing to update one or more stocks in the favorite list.<br>
 • Select a row to search that stock and navigate to the stock detail page.<br>
 • Long press a row and display a Context Menu to Delete list item. Then user can then remove that stock from the Favorites list.<br>
-
+![screen shot 2017-12-29 at 1 05 16 am](https://user-images.githubusercontent.com/20076221/34433468-68e7dcb4-ec34-11e7-9a28-3f19775afd06.png)<br>
+![screen shot 2017-12-29 at 1 05 24 am](https://user-images.githubusercontent.com/20076221/34433469-6bbedbcc-ec34-11e7-85cc-b04a31a0d1cc.png)<br>
 
