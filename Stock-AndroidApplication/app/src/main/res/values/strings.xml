@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Stocks</string>
+    <string name="stockname">Stock Market Search</string>
+    <string-array name="SortBy">
+        <item>Sort by</item>
+        <item>Symbol</item>
+        <item>Price</item>
+        <item>Change</item>
+        <item>Change Percent</item>
+    </string-array>
+    <string-array name="choosechart">
+        <item>Price</item>
+        <item>SMA</item>
+        <item>EMA</item>
+        <item>STOCH</item>
+        <item>RSI</item>
+        <item>ADX</item>
+        <item>CCI</item>
+        <item>MACD</item>
+        <item>BBANDS</item>
+    </string-array>
+    <string-array name="Orderby">
+        <item>Order</item>
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">379370752490133</string>
+    <string name="fb_login_protocol_scheme">fb379370752490133</string>
+
+</resources>
