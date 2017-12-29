@@ -50,7 +50,7 @@ Here are some important points about this feature:<br>
 • Display a proper error message if failing to update one or more stocks in the favorite list.<br>
 • Select a row to search that stock and navigate to the stock detail page.<br>
 • Long press a row and display a Context Menu to Delete list item. Then user can then remove that stock from the Favorites list.<br>
-![screen shot 2017-12-29 at 1 05 16 am](https://user-images.githubusercontent.com/20076221/34433468-68e7dcb4-ec34-11e7-9a28-3f19775afd06.png)<br>
+![screen shot 2017-12-29 at 1 05 16 am](https://user-images.githubusercontent.com/20076221/34433468-68e7dcb4-ec34-11e7-9a28-3f19775afd06.png)
 ![screen shot 2017-12-29 at 1 05 24 am](https://user-images.githubusercontent.com/20076221/34433469-6bbedbcc-ec34-11e7-85cc-b04a31a0d1cc.png)<br>
 5.3 Stock Details<br>
 When the user clicks the Get Quote button, your app should display a loading image before you are ready to show the stock details view. The Stock Details section should be designed as per Figure 9.<br>
@@ -58,7 +58,7 @@ The stock detail section should have 3 views:<br> • Current Stock
 • Historical Charts <br>• News Feeds<br>
 You can use a “Tabbed Activity” to navigate between 3 views above. The back button in the header should navigate back to the Search Form.<br>
 The Stock Details would be starting with the ‘Current’ view as loaded by default. Furthermore, the stock details would have a list showing all the stock values. The list of the items in the stock details would be implemented using a ‘ListView’.<br> The following stock values should be displayed: Stock Symbol, Last Price, Change, Timestamp, Open, Close, Day’s Range, Volume.<br> The meaning of these values is the same as in Homework 8.<br>
-![screen shot 2017-12-29 at 1 08 45 am](https://user-images.githubusercontent.com/20076221/34433528-dc66ef0e-ec34-11e7-9f94-8b8ece7e4aa5.png)<br>
+![screen shot 2017-12-29 at 1 08 45 am](https://user-images.githubusercontent.com/20076221/34433528-dc66ef0e-ec34-11e7-9f94-8b8ece7e4aa5.png)
 ![screen shot 2017-12-29 at 1 08 30 am](https://user-images.githubusercontent.com/20076221/34433531-e1a9aae2-ec34-11e7-9899-b9a84e092dc8.png)<br>
 Below the list of stock details, you need to show the indicator choices and the high chart image, as shown in Figure 10. The user will need to scroll down to see these areas. A Spinner and a TextView/Button labeled Change are used to choose another indicator and change the high chart image. Here are some points:<br>
 • Include all the indicators and the chart is about the price/volume at the beginning.<br>
@@ -66,14 +66,14 @@ Below the list of stock details, you need to show the indicator choices and the 
 • You should use a “WebView” to display the chart and reuse some of your HTML and JavaScript code from previous homeworks. But you should figure out a way to communicate between your Android code and the JS code asynchronously. It’s NOT allowed to block the app while waiting for the chart to be shown in the WebView.<br>
 • Whenever the chart in the WebView is in a loading state, you should hide the previous chart (if there’s any) and display a loading icon.<br>
 • Display a proper message if there is any failure in retrieving a chart.<br>
-![screen shot 2017-12-29 at 1 11 05 am](https://user-images.githubusercontent.com/20076221/34433575-30ad1034-ec35-11e7-8005-395f102a8dc6.png)<br>
+![screen shot 2017-12-29 at 1 11 05 am](https://user-images.githubusercontent.com/20076221/34433575-30ad1034-ec35-11e7-8005-395f102a8dc6.png)
 ![screen shot 2017-12-29 at 1 10 57 am](https://user-images.githubusercontent.com/20076221/34433578-33cc8dd0-ec35-11e7-8925-01a81cc4fe5b.png)<br>
 5.4 Historical Charts<br>
 ![screen shot 2017-12-29 at 1 12 46 am](https://user-images.githubusercontent.com/20076221/34433634-74155f84-ec35-11e7-969a-7f35c3ec0e85.png)<br>
 5.5 News Feed<br>
 ![screen shot 2017-12-29 at 1 12 53 am](https://user-images.githubusercontent.com/20076221/34433631-7143347a-ec35-11e7-8006-d6f851f2ba12.png)<br>
 5.6 Facebook Share<br>
-![screen shot 2017-12-29 at 1 14 08 am](https://user-images.githubusercontent.com/20076221/34433660-9ff1d3d0-ec35-11e7-8b83-73190e45da08.png)<br>
+![screen shot 2017-12-29 at 1 14 08 am](https://user-images.githubusercontent.com/20076221/34433660-9ff1d3d0-ec35-11e7-8b83-73190e45da08.png)
 ![screen shot 2017-12-29 at 1 13 59 am](https://user-images.githubusercontent.com/20076221/34433662-a24bd13a-ec35-11e7-8756-9f6700e6798f.png)<br>
 5.7 Error Share<br>
 
