@@ -132,7 +132,7 @@ function facebookshare(){
   //$.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
   /*window.fbAsyncInit = function() {
     FB.init({
-      appId      : '295363070868339',
+      appId      : '',
       cookie     : true,
       xfbml      : true,
       version    : '2.11'
@@ -155,7 +155,7 @@ function facebookshare(){
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     FB.ui({
-      app_id:'295363070868339',
+      app_id:'2',
       method: 'feed',
       display: 'popup',
       picture: urlforfb
