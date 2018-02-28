@@ -11,7 +11,7 @@ module.exports.getUser = function(callback){
 module.exports.getStockTableData = function(stock_name,callback){
   var options={
      host: 'www.alphavantage.co',
-     path: '/query?function=TIME_SERIES_DAILY&symbol='+stock_name+'&apikey=TBYMG7F0TDJ73HP6',
+     path: '/query?function=TIME_SERIES_DAILY&symbol='+stock_name+'&apikey=###########',
      method: 'GET'
   };
   https.request(options, function(res){
